@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: knoema_noaa
-    database: KNOEMA_ENVIRONMENT_DATA_ATLAS
+    database: ENVIRONMENT_DATA_ATLAS
     schema: ENVIRONMENT
     tables:
       - name: NOAACD2019R
