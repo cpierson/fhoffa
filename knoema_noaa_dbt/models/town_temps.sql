@@ -1,0 +1,2 @@
+select "POSTAL_CODE" zip_code, "DATE_VALID_STD" date_of_temp , "MIN_TEMPERATURE_AIR_2M_F" min_temp , "MAX_TEMPERATURE_AIR_2M_F" max_temp, "TOT_PRECIPITATION_IN" precipitation_inches
+from {{ source('weather_tile', 'HISTORY_DAY') }}
