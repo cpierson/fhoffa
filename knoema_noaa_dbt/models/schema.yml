@@ -1,5 +1,12 @@
 version: 2
 
+models:
+  - name: town_temps_with_name
+    columns: 
+    - name: zip_code
+      tests:
+        - not_null
+
 sources:
   - name: knoema_noaa
     database: ENVIRONMENT_DATA_ATLAS
@@ -11,3 +18,5 @@ sources:
     schema: STANDARD_TILE
     tables:
       - name: HISTORY_DAY
+
+
