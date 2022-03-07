@@ -12,12 +12,12 @@ profile: 'default'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-model-paths: ["knoema_noaa_dbt/models"]
-analysis-paths: ["knoema_noaa_dbt/analyses"]
-test-paths: ["knoema_noaa_dbt/tests"]
-seed-paths: ["knoema_noaa_dbt/seeds"]
-macro-paths: ["knoema_noaa_dbt/macros"]
-snapshot-paths: ["knoema_noaa_dbt/snapshots"]
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
@@ -36,17 +36,15 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
-
-
-
-
-
-# In this example config, we tell dbt to build all models in the example/ directory
-# as tables. These settings can be overridden in the individual model files
-# using the `{{ config(...) }}` macro.
-models:
   dbt_artifacts:
     +schema: target_schema
     staging:
       +schema: staging_schema
+  elementary:
+    edr_sources:
+      +database: WEATHER
+    edr:
+      +enabled: false
 
+  on-run-end:
+    #- "{{ elementary.upload_dbt_artifacts(results) }}"

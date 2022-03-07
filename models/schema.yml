@@ -6,6 +6,9 @@ models:
     - name: zip_code
       tests:
         - not_null
+    config:
+      edr:
+        monitered: true
 
 sources:
   - name: knoema_noaa
@@ -18,5 +21,12 @@ sources:
     schema: STANDARD_TILE
     tables:
       - name: HISTORY_DAY
+  - name: fantasy_football
+    database: FANTASY_FOOTBALL_2020
+    schema: NFL2020
+    tables:
+      - name: SCHEDULE
+      - name: PBP
+      - name: TEAMS
 
 
