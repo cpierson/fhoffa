@@ -1,0 +1,13 @@
+# alerts destination #
+slack_notification_webhook: <your_slack_webhook_url>
+
+# optional #
+# Target path for the output files of edr lineage #
+traget-path:
+
+# optional #
+# Global configuration for data monitoring#
+vars:
+  days_back: 14
+  anomaly_score_threshold: 3
+  min_buckets_per_run: 2
