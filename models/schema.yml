@@ -6,6 +6,7 @@ models:
     - name: zip_code
       tests:
         - not_null
+  - name: eagles_pbp_with_day 
     config:
       edr:
         monitered: true
