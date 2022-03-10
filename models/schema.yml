@@ -22,6 +22,10 @@ sources:
     schema: STANDARD_TILE
     tables:
       - name: HISTORY_DAY
+        loaded_at_field: to_timestamp(DATE_VALID_STD)
+        freshness:
+          warn_after: {count: 48, period: hour}
+          error_after: {count: 72, period: hour}
   - name: fantasy_football
     database: FANTASY_FOOTBALL_2020
     schema: NFL2020
