@@ -24,8 +24,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-on-run-end:
-  - "{{upload_dbt_artifacts_v2}}"
+#on-run-end:
+#  - "{{upload_dbt_artifacts_v2}}"
 #    - "{{ elementary.upload_dbt_artifacts(results) }}"
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -34,10 +34,7 @@ on-run-end:
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      materialized: view
+
   dbt_artifacts:
     +schema: target_schema
     staging:
