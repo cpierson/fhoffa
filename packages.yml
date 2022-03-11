@@ -1,5 +1,6 @@
 packages:
   - package: dbt-labs/dbt_utils
     version: 0.8.1
-  - package: brooklyn-data/dbt_artifacts
-    version: 0.7.0
+
+  - git: "https://github.com/brooklyn-data/dbt_artifacts.git"
+    revision:  0.8.0a1 # tag or branch name
