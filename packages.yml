@@ -1,6 +1,11 @@
 packages:
   - package: dbt-labs/dbt_utils
-    version: 0.8.1
-
+    version: 0.8.2
   - git: "https://github.com/brooklyn-data/dbt_artifacts.git"
     revision:  0.8.0a1 # tag or branch name
+  #- package: elementary-data/elementary
+  #  version: 0.2.1
+#    - package: re-data/re_data
+#      version: [">=0.6.0", "<0.7.0"]
+
+

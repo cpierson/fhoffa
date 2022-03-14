@@ -25,8 +25,7 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 #on-run-end:
-#  - "{{upload_dbt_artifacts_v2}}"
-#    - "{{ elementary.upload_dbt_artifacts(results) }}"
+#  - "{{ elementary.upload_dbt_artifacts(results) }}"
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
